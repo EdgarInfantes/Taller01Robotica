@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Control de Asistencia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Sistema de Control de Asistencia</h1>
+    </div>
+    <div class="main-container">
+        <div class="button-container">
+            <button class="moodle-button" onclick="pyqtBridge.openAttendanceRegister()">Registrar Asistencia</button>
+            <button class="moodle-button" onclick="pyqtBridge.openStatisticsView()">Ver Estadísticas</button>
+            <button class="moodle-button" onclick="pyqtBridge.generateReport()">Generar Informe</button>
+            <button class="moodle-button" onclick="pyqtBridge.openAdminPanel()">Panel de Administración</button>
+        </div>
+    </div>
+    <script>
+        // Verificar si pyqtBridge está disponible
+        if (typeof pyqtBridge === 'undefined') {
+            console.log('pyqtBridge no está disponible');
+            // Implementación de respaldo
+            var pyqtBridge = {
+                openAttendanceRegister: function() { alert("Abriendo registro de asistencia"); },
+                openStatisticsView: function() { alert("Abriendo vista de estadísticas"); },
+                generateReport: function() { alert("Generando informe"); },
+                openAdminPanel: function() { alert("Abriendo panel de administración"); }
+            };
+        }
+    </script>
+</body>
+</html>
